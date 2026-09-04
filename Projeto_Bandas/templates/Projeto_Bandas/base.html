@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Projeto Bandas {% endblock %}</title>
+    <link rel="stylesheet" href="{%static 'Projeto_Bandas/css/style.css' %}">
+</head>
+<body>
+ <header>
+     <div class="header-topo">
+<h1>Projeto Bandas</h1>
+         {% if request.resolver_match.url_name == 'home' %}
+         <form method="get" action="{%url 'home' %}" class="formulario-busca-header">
+    <input type="text" name="q" placeholder="Buscar banda..." value="{{busca|default:''}}">
+    <button type="submit">Buscar</button>
+
+</form>
+         {% endif %}
+
+     {% if user.is_authenticated %}
+     <span class="usuario-header">Olá {{user.username}}</span>
+         {% endif %}
+     </div>
+<nav>
+    <a href="{%url 'home' %}">Home</a>
+    {% if user.is_authenticated %}
+    <a href="{%url 'nova_banda' %}">Cadastrar banda</a>
+    <a href="{%url 'logout' %}">Sair</a>
+    {% else %}
+    <a href="{%url 'login' %}">Login</a>
+    <a href="{%url 'cadastro' %}">Cadastrar</a>
+    {% endif %}
+</nav>
+    </header>
+ {% if messages %}
+ <div class="mensagens">
+     {% for message in messages %}
+     <div class="mensagem {{message.tags}}">
+         <span>{{message}}</span>
+         <button type="button" class="fechar-mensagem">&times;</button>
+     </div>
+     {% endfor %}
+ </div>
+ {% endif %}
+
+<main>
+    {%block content %}
+    {% endblock %}
+</main>
+<script>
+    const mensagens = document.querySelectorAll('.mensagem');
+    mensagens.forEach((mensagem)=>{
+        const botaofechar = document.querySelector('.fechar-mensagem');
+        botaofechar.addEventListener('click',()=>{
+            mensagem.remove();
+
+        });
+        setTimeout(()=>{
+            mensagem.classList.add('sumindo');
+            setTimeout(()=>{
+                mensagem.remove();
+            },4000);
+        },5000);
+    });
+</script>
+
+</body>
+</html>

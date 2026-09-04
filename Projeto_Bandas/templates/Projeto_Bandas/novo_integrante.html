@@ -1,0 +1,18 @@
+{% extends 'Projeto_Bandas/base.html' %}
+{% block title %}
+Cadastrar Integrante
+{% endblock %}
+
+{% block content %}
+
+<section class="formulario-pagina">
+<h1>Cadastre o novo integrante da banda {{banda.nome}}</h1>
+<form method="post" class="formulario">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="botao-principal">Cadastrar</button>
+
+</form>
+<a href="{%url 'detalhes' banda.id %}" class="botao-voltar">Voltar</a>
+</section>
+{% endblock %}

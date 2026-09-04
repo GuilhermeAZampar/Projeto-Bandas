@@ -1,0 +1,160 @@
+{% extends 'Projeto_Bandas/base.html' %}
+{% block title %}
+{{banda.nome}}
+{% endblock %}
+{% block content %}
+
+<section class="banda-info">
+    {% if banda.foto %}
+    <img src="{{banda.foto.url}}" alt="Foto da banda {{banda.nome}}" class="banda-detalhes-foto">
+    {% endif %}
+    <div class="banda-info-conteudo">
+        <h1>{{banda.nome}}</h1>
+        <p class="banda-estilo">{{banda.estilo}}</p>
+        <p>{{banda.descricao_banda}}</p>
+        {% if user == banda.usuario %}
+        <div class="acoes-item">
+            <a href="{%url 'editar_banda' banda.id %}">Editar Banda</a>
+            <a href="{%url 'excluir_banda' banda.id %}">Excluir Banda</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+{% if banda.demo_audio %}
+<section class="detalhes-secao">
+<h2>Demos</h2>
+<audio controls><source src="{{banda.demo_audio.url}}">Seu navegador não suporta audio</audio>
+    </section>
+{% endif %}
+
+<section class="detalhes-secao">
+<h2>Plataformas</h2>
+
+    <div class="links-banda">
+{%if banda.spotify %}
+<a href="{{banda.spotify}}" target="_blank">Spotify</a>
+{% endif %}
+
+{%if banda.apple_music %}
+<a href="{{banda.apple_music}}" target="_blank">Apple Music</a>
+{% endif %}
+
+
+{%if banda.youtube_music %}
+<a href="{{banda.youtube_music}}" target="_blank">Youtube Music</a>
+{% endif %}
+
+{%if banda.amazon_music %}
+<a href="{{banda.amazon_music}}" target="_blank">Amazon Music</a>
+{% endif %}
+
+
+{%if banda.deezer %}
+<a href="{{banda.deezer}}" target="_blank">Deezer</a>
+{% endif %}
+        </div>
+</section>
+
+
+<section class="detalhes-secao">
+<h2>Redes Sociais</h2>
+    <div class="links-banda">
+
+{%if banda.instagram %}
+<a href="{{banda.instagram}}" target="_blank">Instagram</a>
+{% endif %}
+
+{%if banda.x %}
+<a href="{{banda.x}}" target="_blank">X</a>
+{% endif %}
+
+{%if banda.tiktok %}
+<a href="{{banda.tiktok}}" target="_blank">TikTok</a>
+{% endif %}
+
+{%if banda.youtube %}
+<a href="{{banda.youtube}}" target="_blank">Youtube</a>
+{% endif %}
+        </div>
+</section>
+
+
+<section class="detalhes-secao">
+    <div class="secao-cabecalho">
+<h2>Integrantes </h2>
+{% if user == banda.usuario %}
+<a class="botao-acao" href="{%url 'novo_integrante' banda.id %}">Novo Integrante</a>
+{% endif %}
+        </div>
+    <div class="lista-integrantes">
+{% for integrante in banda.integrantes.all %}
+<div class="integrante-card">
+    <div>
+    <strong>{{integrante.nome}}</strong>
+    <strong>{{integrante.instrumento}}</strong>
+   </div>
+    {% if user == banda.usuario %}
+    <div class="acoes-item">
+    <a href="{%url 'editar_integrante' integrante.id %}">Editar Integrante</a>
+    <a href="{%url 'excluir_integrante' integrante.id %}">Excluir Integrante</a>
+        </div>
+    {% endif %}
+</div>
+{% empty %}
+<p>Não ha integrantes cadastrados</p>
+{% endfor %}
+        </div>
+</section>
+
+
+<section class="detalhes-secao">
+    <div class="secao-cabecalho">
+        <h2>Discografia</h2>
+
+        {% if user == banda.usuario %}
+            <a class="botao-acao" href="{% url 'cadastrar_disco' banda.id %}">
+                Cadastrar Disco
+            </a>
+        {% endif %}
+    </div>
+
+    <div class="lista-discos">
+        {% for disco in banda.discos.all %}
+
+            <div class="disco-card">
+
+                {% if disco.capa %}
+                    <img
+                        src="{{ disco.capa.url }}"
+                        alt="Capa de {{ disco.nome }}"
+                        class="disco-capa"
+                    >
+                {% endif %}
+
+                <div class="disco-conteudo">
+                    <h3>{{ disco.nome }}</h3>
+                    <p class="disco-ano">{{ disco.ano }}</p>
+                    <p>{{ disco.descricao_disco }}</p>
+
+                    {% if user == banda.usuario %}
+                        <div class="acoes-item">
+                            <a href="{% url 'editar_disco' disco.id %}">
+                                Editar
+                            </a>
+
+                            <a href="{% url 'excluir_disco' disco.id %}">
+                                Excluir
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+
+            </div>
+
+        {% empty %}
+            <p>Não há discos cadastrados</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

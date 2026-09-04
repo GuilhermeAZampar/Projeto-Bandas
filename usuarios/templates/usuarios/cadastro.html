@@ -1,0 +1,18 @@
+{% extends 'Projeto_Bandas/base.html' %}
+{% block title %}
+Cadastro
+{% endblock %}
+
+{% block content %}
+
+<section class="formulario-pagina">
+<h1>Cria Conta</h1>
+<form method="post" class="formulario">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="botao-principal">Cadastrar</button>
+</form>
+
+    </section>
+
+{% endblock %}

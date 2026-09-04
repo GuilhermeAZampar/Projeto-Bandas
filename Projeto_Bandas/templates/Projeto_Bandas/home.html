@@ -1,0 +1,30 @@
+{% extends 'Projeto_Bandas/base.html' %}
+{% block title %}
+Projeto Bandas - Home
+{% endblock %}
+{% block content %}
+
+{% for banda in bandas %}
+
+<div class="banda-card">
+    {% if banda.foto %}
+    <img src="{{banda.foto.url}}" alt="Foto da banda {{banda.nome}}" class="banda-card-foto">
+    {% endif %}
+    <div class="banda-card-conteudo">
+<h1>{{banda.nome}}</h1>
+<h2>{{banda.estilo}}</h2>
+<p>{{banda.descricao_banda}}</p>
+<a href="{%url 'detalhes' banda.id %}">Detalhes sobre a banda</a>
+        </div>
+</div>
+
+{% empty %}
+{% if busca %}
+<p>Nenhuma banda encontrada para a busca "{{busca}}"</p>
+{% else %}
+<p>Não há bandas cadastradas</p>
+{% endif %}
+
+{% endfor %}
+
+{% endblock %}

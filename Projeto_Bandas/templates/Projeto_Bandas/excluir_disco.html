@@ -1,0 +1,18 @@
+{% extends 'Projeto_Bandas/base.html' %}
+{% block title %}
+Excluir {{disco.nome}}
+{% endblock %}
+{% block content %}
+
+<section class="formulario-pagina">
+<p>
+    Deseja mesmo excluir o <strong>{{disco.nome}}</strong> da banda <strong>{{banda.nome}}</strong>
+</p>
+
+<form method="post" class="formulario">
+    {% csrf_token %}
+    <button type="submit" class="botao-principal">Excluir</button>
+</form>
+<a href="{%url 'detalhes' banda.id %}" class="botao-voltar">Cancelar</a>
+</section>
+{% endblock %}
