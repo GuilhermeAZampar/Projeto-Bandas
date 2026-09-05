@@ -3,7 +3,7 @@ from django.forms import ModelForm
 from .models import Banda,Integrantes,Discos
 
 class BandaForm(ModelForm):
-    demo_arquivo=forms.FileField(required=False,label="Demo Audio")
+    demo_audio_url=forms.URLField(required=False,widget=forms.HiddenInput())
     class Meta:
         model= Banda
         fields=[

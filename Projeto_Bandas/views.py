@@ -30,10 +30,10 @@ def nova_banda(request):
         if form.is_valid():
             banda=form.save(commit=False)
             banda.usuario=request.user
-            demo_arquivo=form.cleaned_data.get('demo_arquivo')
-            if demo_arquivo:
-                resultado = cloudinary.uploader.upload(demo_arquivo,resource_type='video',folder='demos')
-                banda.demo_audio=resultado['secure_url']
+            demo_audio_url=form.cleaned_data.get('demo_audio_url')
+            if demo_audio_url:
+                banda.demo_audio = demo_audio_url
+
 
             banda.save()
             messages.success(request,'Banda cadastrada com sucesso!!')
@@ -58,10 +58,9 @@ def editar_banda(request,id):
         form = BandaForm(request.POST,request.FILES,instance=banda)
         if form.is_valid():
             banda= form.save(commit=False)
-            demo_arquivo=form.cleaned_data.get('demo_arquivo')
-            if demo_arquivo:
-                resultado=cloudinary.uploader.upload(demo_arquivo,resource_type='video',folder='demos')
-                banda.demo_audio=resultado['secure_url']
+            demo_audio_url=form.cleaned_data.get('demo_audio_url')
+            if demo_audio_url:
+                banda.demo_audio=demo_audio_url
 
             banda.save()
             messages.success(request,'Banda atualizada com sucesso!')

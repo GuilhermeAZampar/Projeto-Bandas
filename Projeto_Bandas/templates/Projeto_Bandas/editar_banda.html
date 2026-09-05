@@ -6,15 +6,78 @@ Editar {{banda.nome}}
 
 <section class="formulario-pagina">
 <h1>Editar {{banda.nome}}</h1>
-<form method="post" enctype="multipart/form-data" class="formulario">
+<form method="post" enctype="multipart/form-data" class="formulario" id="form-banda">
   {% csrf_token %}
   {{form.as_p}}
 
+  <p>
+      <label for="demo-arquivo">Demo audio: </label>
+      <input type="file" id="demo-arquivo" accept="audio/mpeg">
+  </p>
 
-  <button type="submit" class="botao-principal">Salvar Alterações</button>
+  <p id="status-demo"></p>
+
+  <button type="submit" class="botao-principal" id="botao-salvar">Salvar Alterações</button>
 
 </form>
 
 <a href="{%url 'detalhes' banda.id %}" class="botao-voltar">Voltar</a>
 </section>
+<script>
+  const formulario = document.getElementById('form-banda');
+const demoArquivo = document.getElementById('demo-arquivo');
+const demoUrl = document.getElementById('id_demo_audio_url');
+const statusDemo = document.getElementById('status-demo');
+const botaoSalvar = document.getElementById('botao-salvar');
+
+formulario.addEventListener('submit', async function(event) {
+
+    if (!demoArquivo.files.length) {
+        return;
+    }
+
+    event.preventDefault();
+
+    botaoSalvar.disabled = true;
+    statusDemo.textContent = 'Enviando nova demo...';
+
+    const dados = new FormData();
+
+    dados.append('file', demoArquivo.files[0]);
+    dados.append('upload_preset', 'demos_unsigned');
+
+    try {
+
+        const resposta = await fetch(
+            'https://api.cloudinary.com/v1_1/wblicxjs/video/upload',
+            {
+                method: 'POST',
+                body: dados
+            }
+        );
+
+        if (!resposta.ok) {
+            throw new Error('Erro no upload');
+        }
+
+        const resultado = await resposta.json();
+
+        demoUrl.value = resultado.secure_url;
+
+        statusDemo.textContent = 'Demo enviada com sucesso!';
+
+        demoArquivo.value = '';
+
+        formulario.submit();
+
+    } catch (erro) {
+
+        console.error(erro);
+
+        statusDemo.textContent = 'Erro ao enviar a demo.';
+        botaoSalvar.disabled = false;
+    }
+
+});
+</script>
 {% endblock %}
