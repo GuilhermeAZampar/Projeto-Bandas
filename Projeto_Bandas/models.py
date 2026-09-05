@@ -7,7 +7,7 @@ class Banda(models.Model):
     nome=models.CharField(max_length=100)
     estilo=models.CharField(max_length=100)
     descricao_banda=models.TextField(max_length=500)
-    demo_audio=models.FileField(upload_to='demos/',blank=True)
+    demo_audio=models.URLField(blank=True)
 
     spotify = models.URLField(blank=True)
     apple_music = models.URLField(blank=True)

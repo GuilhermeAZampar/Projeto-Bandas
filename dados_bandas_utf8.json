@@ -1,0 +1,301 @@
+[
+{
+  "model": "Projeto_Bandas.banda",
+  "pk": 1,
+  "fields": {
+    "usuario": 1,
+    "nome": "Metallica",
+    "estilo": "Thrash Metal",
+    "descricao_banda": "Banda Formada por James Hetfield , Kirk Hammet , Lars Ulrich , Roberto Trujillo , membros passados , Cliff Burton , Jason Newsted e Dave Mustaine",
+    "demo_audio": "demos/For_Whom_The_Bell_Tolls_Remastered.mp3",
+    "spotify": "https://open.spotify.com/intl-pt/artist/2ye2Wgw4gimLv2eAKyk1NB",
+    "apple_music": "https://music.apple.com/br/artist/metallica/3996865",
+    "youtube_music": "https://music.youtube.com/channel/UC-9-zyMRJZSkaZz9x6e269Q",
+    "amazon_music": "https://music.amazon.com/artists/B000QJWVUS/metallica",
+    "deezer": "https://www.deezer.com/en/artist/119",
+    "instagram": "https://www.instagram.com/metallica",
+    "x": "https://x.com/metallica",
+    "tiktok": "https://www.tiktok.com/@metallica",
+    "youtube": "https://www.youtube.com/@metallica",
+    "foto": "banda/metallica.png"
+  }
+},
+{
+  "model": "Projeto_Bandas.banda",
+  "pk": 3,
+  "fields": {
+    "usuario": 2,
+    "nome": "Megadeth",
+    "estilo": "Thrash Metal",
+    "descricao_banda": "O Megadeth é uma famosa banda americana de thrash metal formada em Los Angeles no ano de 1983",
+    "demo_audio": "demos/Tornado_Of_Souls_-_Megadeth_youtube.mp3",
+    "spotify": "https://open.spotify.com/intl-pt/artist/1Yox196W7bzVNZI7RBaPnf",
+    "apple_music": "https://music.apple.com/br/artist/megadeth/488289",
+    "youtube_music": "https://music.youtube.com/channel/UC5fC3v-H_M_y0T3YJb_4KJA",
+    "amazon_music": "https://music.amazon.com.br/artists/B000QKJ7B8/megadeth",
+    "deezer": "https://www.deezer.com/br/artist/1381",
+    "instagram": "https://www.instagram.com/megadeth",
+    "x": "https://x.com/megadeth",
+    "tiktok": "https://www.tiktok.com/@megadeth",
+    "youtube": "https://www.youtube.com/@megadeth",
+    "foto": "banda/megadeth-banda.jpg"
+  }
+},
+{
+  "model": "Projeto_Bandas.banda",
+  "pk": 4,
+  "fields": {
+    "usuario": 4,
+    "nome": "Slipknot",
+    "estilo": "NuMetal",
+    "descricao_banda": "Slipknot é uma banda norte-americana de nu metal/alternative metal, formada em 1995, em Des Moines, Iowa. Conhecida pelo som pesado, máscaras e performances intensas, sua formação clássica contou com nove membros. Entre os ex-integrantes mais marcantes estão Paul Gray (baixo), Joey Jordison (bateria), Jay Weinberg (bateria) e Sid Wilson (DJ, samples e turntables).",
+    "demo_audio": "demos/Slipknot_-_The_Heretic_Anthem_Audio_-_Slipknot_youtube.mp3",
+    "spotify": "https://open.spotify.com/intl-pt/artist/05fG473iIaoy82BF1aGhL8?utm_source=chatgpt.com",
+    "apple_music": "https://music.apple.com/us/artist/slipknot/6907568?utm_source=chatgpt.com",
+    "youtube_music": "https://music.youtube.com/channel/UCOJZ1tna8yj8mAEITPkHNCQ",
+    "amazon_music": "https://music.amazon.com.br/artists/B000TDUH2O/slipknot?utm_source=chatgpt.com&referrer=https%3A%2F%2Fchatgpt.com%2F",
+    "deezer": "https://www.deezer.com/br/artist/1177?utm_source=chatgpt.com",
+    "instagram": "https://www.instagram.com/slipknot/?utm_source=chatgpt.com",
+    "x": "https://x.com/slipknot?utm_source=chatgpt.com",
+    "tiktok": "https://www.tiktok.com/@slipknot?utm_source=chatgpt.com",
+    "youtube": "https://www.youtube.com/@slipknot",
+    "foto": "banda/slip.jpg"
+  }
+},
+{
+  "model": "Projeto_Bandas.banda",
+  "pk": 8,
+  "fields": {
+    "usuario": 6,
+    "nome": "System Of Down",
+    "estilo": "Nu Metal / Alternative Metal",
+    "descricao_banda": "System of a Down é uma banda norte-americana de metal formada em Glendale, Califórnia, em 1994. O grupo é conhecido por misturar nu metal, metal alternativo, thrash metal e influências da música armênia, além de letras sociais e políticas. A formação mais conhecida é composta por Serj Tankian, Daron Malakian, Shavo Odadjian e John Dolmayan. O álbum Toxicity, lançado em 2001, tornou-se um dos trabalhos mais importantes da banda.",
+    "demo_audio": "demos/System_of_a_Down_-_Aerials_Remastered_2021.mp3",
+    "spotify": "https://open.spotify.com/intl-pt/artist/5eAWCfyUhZtHHtBdNk56l1?utm_source=chatgpt.com",
+    "apple_music": "https://music.apple.com/us/artist/system-of-a-down/462715",
+    "youtube_music": "https://music.youtube.com/channel/UCvgA_1oMIn3T3S9O_R9_24w",
+    "amazon_music": "https://music.amazon.com/artists/B000QJO3Y4/system-of-a-down",
+    "deezer": "https://www.deezer.com/br/artist/458",
+    "instagram": "https://www.instagram.com/systemofadown?utm_source=gemini",
+    "x": "https://x.com/systemofadown?utm_source=gemini",
+    "tiktok": "https://www.tiktok.com/@systemofadown?utm_source=gemini",
+    "youtube": "https://youtube.com/user/systemofadown?utm_source=gemini",
+    "foto": "banda/systemicon.jpg"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 1,
+  "fields": {
+    "banda": 1,
+    "nome": "James Hetfield -",
+    "instrumento": "Guitarra Base / Vocalista"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 2,
+  "fields": {
+    "banda": 1,
+    "nome": "Kirk Hammet -",
+    "instrumento": "Guitarra Solo / Back-vocals"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 3,
+  "fields": {
+    "banda": 1,
+    "nome": "Lars Ulrich -",
+    "instrumento": "Baterista"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 4,
+  "fields": {
+    "banda": 1,
+    "nome": "Roberto Trujilo -",
+    "instrumento": "Baixista / Back-vocals"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 5,
+  "fields": {
+    "banda": 3,
+    "nome": "Dave Mustaine -",
+    "instrumento": "Vocalista/Guitarra Base / Solos"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 6,
+  "fields": {
+    "banda": 3,
+    "nome": "Teemu Mäntysaari -",
+    "instrumento": "Guitarra Solo / Back-vocals"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 7,
+  "fields": {
+    "banda": 3,
+    "nome": "James LoMenzo -",
+    "instrumento": "Baixsta"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 8,
+  "fields": {
+    "banda": 3,
+    "nome": "Dirk Verbeuren -",
+    "instrumento": "Baterista"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 9,
+  "fields": {
+    "banda": 4,
+    "nome": "Corey Taylor -",
+    "instrumento": "Vocalista"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 10,
+  "fields": {
+    "banda": 4,
+    "nome": "Mick Thomson -",
+    "instrumento": "Guitarra Base / Solo"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 11,
+  "fields": {
+    "banda": 4,
+    "nome": "Jim Root",
+    "instrumento": "Guitarra Base / Solo"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 12,
+  "fields": {
+    "banda": 4,
+    "nome": "Shawn “Clown” Crahan -",
+    "instrumento": "Percussão e vocal de apoio"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 13,
+  "fields": {
+    "banda": 4,
+    "nome": "Alessandro “V-Man” Venturella -",
+    "instrumento": "Baixista"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 14,
+  "fields": {
+    "banda": 4,
+    "nome": "Michael “Tortilla Man” Pfaff -",
+    "instrumento": "Percussão e vocal de apoio"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 15,
+  "fields": {
+    "banda": 4,
+    "nome": "Eloy Casagrande -",
+    "instrumento": "Baterista"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 17,
+  "fields": {
+    "banda": 8,
+    "nome": "Serj Tankian -",
+    "instrumento": "Vocalista, teclados e guitarra ocasional"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 18,
+  "fields": {
+    "banda": 8,
+    "nome": "Daron Malakian -",
+    "instrumento": "Guitarra, vocais e backing vocals"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 19,
+  "fields": {
+    "banda": 8,
+    "nome": "Shavo Odadjian -",
+    "instrumento": "Baixo"
+  }
+},
+{
+  "model": "Projeto_Bandas.integrantes",
+  "pk": 20,
+  "fields": {
+    "banda": 8,
+    "nome": "John Dolmayan -",
+    "instrumento": "Bateria"
+  }
+},
+{
+  "model": "Projeto_Bandas.discos",
+  "pk": 1,
+  "fields": {
+    "banda": 1,
+    "nome": "Ride The Lightning",
+    "descricao_disco": "Lançado em 27 de julho de 1984 pela Megaforce Records, Ride the Lightning é o segundo álbum de estúdio do Metallica. O disco marcou uma evolução técnica e musical gigante em relação ao primeiro trabalho (Kill 'Em All), misturando a velocidade do thrash metal com arranjos melódicos, letras profundas sobre a morte e o famoso som do baixo de Cliff Burton",
+    "ano": 1984,
+    "capa": "discos/capa_ride.webp"
+  }
+},
+{
+  "model": "Projeto_Bandas.discos",
+  "pk": 3,
+  "fields": {
+    "banda": 3,
+    "nome": "Rust In Peace",
+    "descricao_disco": "Rust in Peace (1990), o quarto álbum do Megadeth, é universalmente aclamado como uma das maiores obras-primas da história do thrash metal e um marco absoluto da música pesada mundial.\r\n\r\nLançado pela Capitol Records em 24 de setembro de 1990, o disco marca a estreia da formação definitiva e mais brilhante do grupo: Dave Mustaine (vocal/guitarra), David Ellefson (baixo), Marty Friedman (guitarra solo) e Nick Menza (bateria).",
+    "ano": 1990,
+    "capa": "discos/Megadeth-RustInPeace.jpg"
+  }
+},
+{
+  "model": "Projeto_Bandas.discos",
+  "pk": 4,
+  "fields": {
+    "banda": 4,
+    "nome": "Slipknot",
+    "descricao_disco": "Slipknot é o álbum de estreia da banda, lançado em 1999. O disco apresentou ao mundo o estilo agressivo e caótico do grupo, combinando nu metal, riffs pesados, percussão intensa, samples e elementos de hip-hop. Com faixas marcantes como “Wait and Bleed”, “Spit It Out” e “(sic)”, o álbum foi fundamental para a ascensão do Slipknot e se tornou um dos grandes discos do metal dos anos 1990.",
+    "ano": 1999,
+    "capa": "discos/Capa_disco_slip.jpg"
+  }
+},
+{
+  "model": "Projeto_Bandas.discos",
+  "pk": 5,
+  "fields": {
+    "banda": 8,
+    "nome": "Toxicity",
+    "descricao_disco": "Toxicity é o segundo álbum de estúdio do System of a Down, lançado em 4 de setembro de 2001. O disco combina metal alternativo e nu metal com elementos de outras sonoridades e inclui algumas das músicas mais conhecidas da banda, como “Chop Suey!”, “Toxicity” e “Aerials”. O álbum possui 14 faixas na edição original.",
+    "ano": 2001,
+    "capa": "discos/toxicyrcapaa.jpg"
+  }
+}
+]
