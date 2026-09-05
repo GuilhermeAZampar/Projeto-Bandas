@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Banda,Integrantes,Discos
 from .forms import BandaForm,IntegranteForm,DiscoForm
 from django.contrib import messages
+import cloudinary.uploader
 
 
 def home(request):
@@ -29,6 +30,11 @@ def nova_banda(request):
         if form.is_valid():
             banda=form.save(commit=False)
             banda.usuario=request.user
+            demo_arquivo=form.cleaned_data.get('demo_arquivo')
+            if demo_arquivo:
+                resultado = cloudinary.uploader.upload(demo_arquivo,resource_type='video',folder='demos')
+                banda.demo_audio=resultado['secure_url']
+
             banda.save()
             messages.success(request,'Banda cadastrada com sucesso!!')
             return redirect('home')
@@ -51,7 +57,13 @@ def editar_banda(request,id):
     if request.method=='POST':
         form = BandaForm(request.POST,request.FILES,instance=banda)
         if form.is_valid():
-            form.save()
+            banda= form.save(commit=False)
+            demo_arquivo=form.cleaned_data.get('demo_arquivo')
+            if demo_arquivo:
+                resultado=cloudinary.uploader.upload(demo_arquivo,resource_type='video',folder='demos')
+                banda.demo_audio=resultado['secure_url']
+
+            banda.save()
             messages.success(request,'Banda atualizada com sucesso!')
             return redirect('detalhes',id=banda.id)
     else:
