@@ -2,7 +2,7 @@ Projeto Bandas
 
 Desenvolvi este projeto para colocar em prática meus estudos de back-end com Python e Django. A aplicação permite criar uma conta e cadastrar bandas, seus integrantes e discos, com informações como estilo musical, descrição, imagens e links.
 
-Acesse a aplicação: Projeto Bandas
+Acesse a aplicação: https://projeto-bandas-nine.vercel.app/
 
 Cada usuário pode editar e excluir apenas as bandas que cadastrou, incluindo os integrantes e discos associados a elas. O sistema também conta com busca de bandas por nome, upload de imagens e arquivos de mídia, mensagens de sucesso e erro e uma interface adaptada para computadores e celulares.
 
