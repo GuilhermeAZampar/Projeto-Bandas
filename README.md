@@ -1,31 +1,31 @@
 Projeto Bandas
 
-Desenvolvi este projeto para colocar em prática meus estudos de back-end com Python e Django. A aplicação permite criar uma conta e cadastrar bandas, seus integrantes e discos, com informações como estilo musical, descrição, imagens e links.
+Desenvolvi esta aplicação para reunir informações de bandas, integrantes e discos em um só lugar. Cada usuário pode criar uma conta e gerenciar suas próprias bandas, com descrições, imagens, links e arquivos de mídia.
 
-Acesse a aplicação: https://projeto-bandas-nine.vercel.app/
+Implementei cadastro e login, busca por nome e controle de permissões para que apenas o responsável possa editar ou excluir seus registros. A interface é responsiva e exibe mensagens de sucesso e erro.
 
-Cada usuário pode editar e excluir apenas as bandas que cadastrou, incluindo os integrantes e discos associados a elas. O sistema também conta com busca de bandas por nome, upload de imagens e arquivos de mídia, mensagens de sucesso e erro e uma interface adaptada para computadores e celulares.
+Utilizei Python, Django e SQLite no ambiente local, com HTML, CSS e JavaScript na interface. O projeto conta com 28 testes automatizados de funcionalidades, autenticação e permissões, além de execução com Podman e Compose.
 
-Utilizei Django e SQLite no back-end, com HTML, CSS e JavaScript na interface. O projeto possui 28 testes automatizados para verificar funcionalidades, autenticação e permissões, além de configuração para execução em containers com Podman e Compose.
+Teste a aplicação: [Projeto Bandas](https://projeto-bandas-nine.vercel.app/)
 
-Para executar localmente, instale as dependências, aplique as migrations e inicie o servidor:
+Para executar localmente:
 
+```bash
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
+```
 
-Também é possível executar com Podman:
+Acesse http://127.0.0.1:8000/. Também é possível executar com Podman:
 
+```bash
 podman compose up --build
-
-Localmente, a aplicação ficará disponível em http://127.0.0.1:8000/.
+```
 
 Para rodar os testes:
 
+```bash
 python manage.py test
+```
 
-Ou, com o container em execução:
-
-podman compose exec web python manage.py test
-
-Desenvolvido por Guilherme Zampar.
+Desenvolvido por [Guilherme Zampar](https://github.com/GuilhermeAZampar).
